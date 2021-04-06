@@ -1,37 +1,24 @@
 {
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "coruscant",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "api": {
-      "tags": []
-    },
-    "jedi-temple": {
-      "tags": []
-    },
-    "jedi-temple-e2e": {
-      "tags": [],
-      "implicitDependencies": ["jedi-temple"]
-    }
+    "api": { "tags": [] },
+    "jedi-temple": { "tags": [] },
+    "jedi-temple-e2e": { "tags": [], "implicitDependencies": ["jedi-temple"] },
+    "ui": { "tags": [] }
   }
 }

@@ -1,0 +1,19 @@
+.card {
+  border: 1px solid gray;
+  width: max-content;
+  padding: 1rem;
+  border-radius: 2px;
+
+  h1 {
+    font-weight: lighter;
+    margin: 0 {
+      bottom: 1rem;
+    }
+  }
+
+  p {
+    color: hsl(0, 0%, 48%);
+    text-align: left;
+    margin: 0;
+  }
+}

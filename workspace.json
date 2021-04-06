@@ -1,21 +1,10 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/nest"
-  },
+  "cli": { "defaultCollection": "@nrwl/nest" },
   "defaultProject": "api",
   "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
-      }
-    },
-    "@nrwl/next": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    }
+    "@nrwl/react": { "application": { "babel": true } },
+    "@nrwl/next": { "application": { "style": "scss", "linter": "eslint" } }
   },
   "projects": {
     "api": {
@@ -48,15 +37,11 @@
         },
         "serve": {
           "executor": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "api:build"
-          }
+          "options": { "buildTarget": "api:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
-          }
+          "options": { "lintFilePatterns": ["apps/api/**/*.ts"] }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
@@ -80,16 +65,11 @@
             "root": "apps/jedi-temple",
             "outputPath": "dist/apps/jedi-temple"
           },
-          "configurations": {
-            "production": {}
-          }
+          "configurations": { "production": {} }
         },
         "serve": {
           "executor": "@nrwl/next:server",
-          "options": {
-            "buildTarget": "jedi-temple:build",
-            "dev": true
-          },
+          "options": { "buildTarget": "jedi-temple:build", "dev": true },
           "configurations": {
             "production": {
               "buildTarget": "jedi-temple:build:production",
@@ -99,9 +79,7 @@
         },
         "export": {
           "executor": "@nrwl/next:export",
-          "options": {
-            "buildTarget": "jedi-temple:build:production"
-          }
+          "options": { "buildTarget": "jedi-temple:build:production" }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
@@ -132,15 +110,32 @@
             "devServerTarget": "jedi-temple:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "jedi-temple:serve:production"
-            }
+            "production": { "devServerTarget": "jedi-temple:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/jedi-temple-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ui": {
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui"],
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

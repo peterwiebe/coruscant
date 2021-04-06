@@ -5,6 +5,8 @@
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
+    "start:app": "nx serve jedi-temple",
+    "start:api": "nx serve api",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
