@@ -25,6 +25,13 @@
   "projects": {
     "api": {
       "tags": []
+    },
+    "jedi-temple": {
+      "tags": []
+    },
+    "jedi-temple-e2e": {
+      "tags": [],
+      "implicitDependencies": ["jedi-temple"]
     }
   }
 }
