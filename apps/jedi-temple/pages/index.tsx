@@ -1,24 +1,39 @@
 import * as React from 'react';
 
-import { API_URL_MOVIES, Movie } from '@coruscant/api-interface';
+import { useMovies } from '@coruscant/data-fetching';
+import { Typography } from 'antd';
 import { Card } from '@coruscant/ui';
 
 import styles from './index.module.scss';
 
-export function Index() {
-  const [movieList, setMovieList] = React.useState<Movie[]>(null);
+const { Title } = Typography;
 
-  React.useEffect(() => {
-    fetch(`http://localhost:3333${API_URL_MOVIES}`)
-      .then((response) => response.json())
-      .then((movies) => setMovieList(movies));
-  }, []);
+export function Index() {
+  const { movies, isLoading, isError } = useMovies();
 
   return (
     <div className={styles.page}>
-      {movieList?.map(({ title }) => (
-        <Card description="This is a sample description" title={title} />
-      ))}
+      <Title>Jedi Archive</Title>
+      <div className={styles.movieList}>
+        {movies?.map(({ id, title }) => (
+          <a href={`/movies/${id}`} key={id}>
+            <Card description="This is a sample description" title={title} />
+          </a>
+        ))}
+        {isLoading ? (
+          <>
+            <Card isLoading />
+            <Card isLoading />
+            <Card isLoading />
+          </>
+        ) : null}
+        {isError ? (
+          <p>
+            Hmm... something unexpected happened. Please contact support for
+            help.
+          </p>
+        ) : null}
+      </div>
     </div>
   );
 }

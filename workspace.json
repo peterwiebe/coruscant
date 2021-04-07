@@ -69,7 +69,11 @@
         },
         "serve": {
           "executor": "@nrwl/next:server",
-          "options": { "buildTarget": "jedi-temple:build", "dev": true },
+          "options": {
+            "buildTarget": "jedi-temple:build",
+            "dev": true,
+            "proxyConfig": "apps/jedi-temple/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "jedi-temple:build:production",
@@ -154,6 +158,25 @@
           "outputs": ["coverage/libs/api-interface"],
           "options": {
             "jestConfig": "libs/api-interface/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data-fetching": {
+      "root": "libs/data-fetching",
+      "sourceRoot": "libs/data-fetching/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/data-fetching/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-fetching"],
+          "options": {
+            "jestConfig": "libs/data-fetching/jest.config.js",
             "passWithNoTests": true
           }
         }
