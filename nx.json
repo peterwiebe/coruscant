@@ -19,6 +19,7 @@
     "api": { "tags": [] },
     "jedi-temple": { "tags": [] },
     "jedi-temple-e2e": { "tags": [], "implicitDependencies": ["jedi-temple"] },
-    "ui": { "tags": [] }
+    "ui": { "tags": [] },
+    "api-interface": { "tags": [] }
   }
 }

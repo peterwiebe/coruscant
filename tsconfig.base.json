@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@coruscant/ui": ["libs/ui/src/index.ts"]
+      "@coruscant/ui": ["libs/ui/src/index.ts"],
+      "@coruscant/api-interface": ["libs/api-interface/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card as AntCard } from 'antd';
 
 import styles from './card.module.scss';
 
@@ -10,10 +11,9 @@ export interface CardProps {
 
 export function Card({ description, title }: CardProps) {
   return (
-    <div className={styles.card}>
-      <h1>{title}</h1>
+    <AntCard className={styles.card} hoverable title={title}>
       <p>{description}</p>
-    </div>
+    </AntCard>
   );
 }
 
