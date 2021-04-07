@@ -11,7 +11,7 @@ export function Index() {
   React.useEffect(() => {
     fetch(`http://localhost:3333${API_URL_MOVIES}`)
       .then((response) => response.json())
-      .then((movies: { results: Movie[] }) => setMovieList(movies.results));
+      .then((movies) => setMovieList(movies));
   }, []);
 
   return (
