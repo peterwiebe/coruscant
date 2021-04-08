@@ -1,5 +1,6 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import fetch from 'node-fetch';
+import { getId } from '@coruscant/utils/get-id';
 import { Movie } from '@coruscant/api-interface';
 
 @Injectable()
@@ -11,8 +12,8 @@ export class MoviesService {
       .then((response) => response.json())
       .then(({ results }) => {
         // TODO: inject additional data
-        movies = results.map(({ episode_id, title }) => ({
-          id: episode_id,
+        movies = results.map(({ title, url }) => ({
+          id: getId(url),
           title,
         }));
       })

@@ -1,18 +1,26 @@
 import React from 'react';
-import { Card as AntCard } from 'antd';
+import { Card as AntCard, Skeleton } from 'antd';
 
 import styles from './card.module.scss';
 
-/* eslint-disable-next-line */
+const { Meta } = AntCard;
+
 export interface CardProps {
-  description: string;
-  title: string;
+  description?: string;
+  isLoading?: boolean;
+  title?: string;
 }
 
-export function Card({ description, title }: CardProps) {
+export function Card({ description, isLoading, title }: CardProps) {
   return (
     <AntCard className={styles.card} hoverable title={title}>
-      <p>{description}</p>
+      {isLoading ? (
+        <Skeleton loading={isLoading} active>
+          <Meta title="Card title" description="Card description" />
+        </Skeleton>
+      ) : (
+        <p>{description}</p>
+      )}
     </AntCard>
   );
 }
