@@ -3,3 +3,10 @@
   gap: 0.5rem;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+.button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
