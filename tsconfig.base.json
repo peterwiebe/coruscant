@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@coruscant/ui": ["libs/ui/src/index.ts"],
-      "@coruscant/api-interface": ["libs/api-interface/src/index.ts"]
+      "@coruscant/api-interface": ["libs/api-interface/src/index.ts"],
+      "@coruscant/data-fetching": ["libs/data-fetching/src/index.ts"],
+      "@coruscant/utils/get-id": ["libs/utils/get-id/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

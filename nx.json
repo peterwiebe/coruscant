@@ -20,6 +20,8 @@
     "jedi-temple": { "tags": [] },
     "jedi-temple-e2e": { "tags": [], "implicitDependencies": ["jedi-temple"] },
     "ui": { "tags": [] },
-    "api-interface": { "tags": [] }
+    "api-interface": { "tags": [] },
+    "data-fetching": { "tags": [] },
+    "utils-get-id": { "tags": [] }
   }
 }
