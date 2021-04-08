@@ -2,9 +2,9 @@ import useSwr from 'swr';
 import { API_URL_MOVIES } from '@coruscant/api-interface';
 import fetcher from './fetcher';
 
-export function useMovies() {
+export function useMovies({ initialData }) {
   const endpoint = `${API_URL_MOVIES}`;
-  const { data, error } = useSwr(endpoint, fetcher);
+  const { data, error } = useSwr(endpoint, fetcher, { initialData });
 
   return {
     movies: data,

@@ -1,5 +1,5 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import fetch from 'node-fetch';
+import fetch from 'isomorphic-fetch';
 import { Character, Planet } from '@coruscant/api-interface';
 
 @Injectable()
@@ -30,7 +30,7 @@ export class AppService {
     await fetch(`https://swapi.dev/api/planets/${id}`)
       .then((response) => response.json())
       .then((planet) => {
-        data = planet
+        data = planet;
       })
       .catch((err) => {
         console.error(err);

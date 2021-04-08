@@ -1,15 +1,20 @@
 import * as React from 'react';
 
-import { useMovies } from '@coruscant/data-fetching';
+import { fetcher, useMovies } from '@coruscant/data-fetching';
 import { Typography } from 'antd';
 import { Card } from '@coruscant/ui';
 
 import styles from './index.module.scss';
+import { API_URL_MOVIES, Movie } from '@coruscant/api-interface';
 
 const { Title } = Typography;
 
-export function Index() {
-  const { movies, isLoading, isError } = useMovies();
+export interface HomePageProps {
+  movies: Movie[];
+}
+
+export function Index({ movies }: HomePageProps) {
+  const { isLoading, isError } = useMovies({ initialData: movies });
 
   return (
     <div className={styles.page}>
@@ -36,6 +41,16 @@ export function Index() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const movies = await fetcher(
+    `http://${process.env.API_DOMAIN}:${process.env.API_PORT}${API_URL_MOVIES}`
+  );
+
+  return {
+    props: { movies },
+  };
 }
 
 export default Index;

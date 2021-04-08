@@ -1,12 +1,17 @@
 # Coruscant
 
-## Development server
+## Local Development
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+### Initialization steps
 
-## Code scaffolding
+1. Install dependencies with `yarn` (at the root directory)
+2. Determine your local IP address (should start with 197. or 10.)
+3. Rename **.local.env.example** 👉 **.local.env** in _jedi-temple_ directory and paste your local IP address to the `API_DOMAIN` value
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+### Start development servers
+
+1. In separate terminals run `yarn start:api` and `yarn start:app`
+2. Open a browser and navigate to [http:localhost:4200](http:localhost:4200)
 
 ## Build
 
@@ -27,19 +32,3 @@ Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 ## Understand your workspace
 
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-## ☁ Nx Cloud
-
-### Computation Memoization in the Cloud
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.

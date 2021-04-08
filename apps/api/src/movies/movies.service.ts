@@ -1,5 +1,5 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import fetch from 'node-fetch';
+import fetch from 'isomorphic-fetch';
 import { getId } from '@coruscant/utils/get-id';
 import { Movie } from '@coruscant/api-interface';
 
