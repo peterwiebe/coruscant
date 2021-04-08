@@ -5,9 +5,10 @@ export interface Character {
 }
 
 export interface Movie {
-  title: string;
-  description: string;
   id: string;
+  title: string;
+  description?: string;
+  posterUrl?: string;
 }
 
 export interface Planet {
